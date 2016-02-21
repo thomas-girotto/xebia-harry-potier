@@ -1,0 +1,29 @@
+<div ng-repeat="bookInBasket in vm.booksInBasket | orderBy:'title'">
+  <div class="row book-line">
+    <div class="col-md-4">
+      <img ng-src="{{bookInBasket.book.cover}}" alt="{{bookInBasket.book.title}}">
+    </div>
+    <div class="col-md-8">
+      <p>{{bookInBasket.book.title}}</p>
+      <p>
+        Quantity: {{bookInBasket.quantity}}
+        <button class="btn btn-primary" ng-click="vm.removeOne(bookInBasket.book)">-</button>
+        <button class="btn btn-primary" ng-click="vm.addOne(bookInBasket.book)">+</button>
+      </p>
+      <p>Unit price: {{bookInBasket.book.price | currency: '€'}}</p>
+    </div>
+  </div>
+</div>
+
+<div ng-if="vm.booksInBasket.length > 0" class="row">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-4">
+      <p>Total price: {{vm.basket.price | currency: '€'}}</p>
+      <p class="recap">Total price with reduction: {{vm.basket.reducedPrice | currency: '€'}}</p>
+    </div>
+  </div>
+</div>
+
+<div ng-if="vm.booksInBasket.length == 0">
+  <p>You don't have any items in your basket. Please visit the whole Harry Potier saga <a ui-sref="books">here</a></p>
+</div>

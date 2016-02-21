@@ -1,0 +1,20 @@
+<nav class="navbar navbar-static-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="books">
+        <span class="glyphicon glyphicon-home"></span>
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li class="active"><a ui-sref="books">Books</a></li>
+        <li>
+          <a class="glyphicon glyphicon-shopping-cart" ui-sref="basket" ng-click="vm.newItemsSeen()">
+            <label ng-if="vm.newItems > 0" class="new-alert animated infinite" ng-class="vm.classAnimation">{{vm.newItems}}</label>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

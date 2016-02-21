@@ -1,0 +1,12 @@
+<div ng-repeat="book in vm.books | orderBy:'title'">
+  <div class="row book-line">
+    <div class="col-md-4">
+      <img ng-src="{{ book.cover }}" alt="{{ book.title }}">
+    </div>
+    <div class="col-md-8">
+      <p>{{ book.title }}</p>
+      <p>{{ book.price | currency: '€' }}</p>
+      <button class="btn btn-primary" ng-click="vm.add(book)">Add</button>
+    </div>
+  </div>
+</div>
