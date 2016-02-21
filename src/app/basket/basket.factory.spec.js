@@ -68,10 +68,10 @@
       //remark: here we don't care about the implementation of the reduction, we just want
       //to check that we apply to the basket the reduction that returns the lower price
       var bestOffer = {
-        applyReduction: function(price) { return 10; }
+        applyReduction: function() { return 10; }
       }
       var otherOffer = {
-        applyReduction: function(price) { return 5; }
+        applyReduction: function() { return 5; }
       }
       var offers = [
           otherOffer,
